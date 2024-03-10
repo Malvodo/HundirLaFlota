@@ -11,21 +11,41 @@ package Code;
 public abstract class Barco implements Comparable<Barco>{
     int longitud;
     String denom;
-    char[] secciones = new char[longitud];
-    int centro;
+    char secciones;
+    int[][] centro;
+    boolean isDestroid = false;
+    
 
-    public Barco(int longitud, String denom, int centro) {
+    public Barco(int longitud, String denom) {
         this.longitud = longitud;
         this.denom = denom;
-        this.centro = centro;
+        secciones =this.denom.toUpperCase().charAt(0);
     }
     
-    protected void rellenSec(){
-        for (int i = 0; i < secciones.length; i++) {
-            secciones[i] = denom.toUpperCase().charAt(0);
+
+    public void Rotation(boolean isHorizontal, char[][] tablero){
+        if (isHorizontal) {
+            tablero[centro[0][0]][centro[0][0]] = secciones;
+            for (int i = 1; i < longitud / 2 + 1; i++) {
+                tablero[centro[0][0] + i][centro[0][0]] = secciones;
+                tablero[centro[0][0] - i][centro[0][0]] = secciones;
+            }
+        }else{
+            for (int i = 1; i < longitud / 2 + 1; i++) {
+                tablero[centro[0][0]][centro[0][0] + i] = secciones;
+                tablero[centro[0][0]][centro[0][0] - i] = secciones;
+            }
         }
     }
+    
+    public boolean isIsDestroid() {
+        return isDestroid;
+    }
 
+    public void setIsDestroid(boolean isDestroid) {
+        this.isDestroid = isDestroid;
+    }
+    
     public int getLongitud() {
         return longitud;
     }
@@ -42,19 +62,19 @@ public abstract class Barco implements Comparable<Barco>{
         this.denom = denom;
     }
 
-    public char[] getSecciones() {
+    public char getSecciones() {
         return secciones;
     }
 
-    public void setSecciones(char[] secciones) {
+    public void setSecciones(char secciones) {
         this.secciones = secciones;
     }
 
-    public int getCentro() {
+    public int[][] getCentro() {
         return centro;
     }
 
-    public void setCentro(int centro) {
+    public void setCentro(int[][] centro) {
         this.centro = centro;
     }
 
