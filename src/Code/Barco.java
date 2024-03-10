@@ -8,7 +8,7 @@ package Code;
  *
  * @author barrodgu
  */
-public abstract class Barco implements Comparable<Barco>{
+public class Barco implements Comparable<Barco>{
     int longitud;
     String denom;
     char secciones;
