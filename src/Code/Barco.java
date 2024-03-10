@@ -82,7 +82,4 @@ public class Barco implements Comparable<Barco>{
     public int compareTo(Barco o) {
         return this.compareTo(o);
     }
-    
-    
-    
 }
