@@ -12,7 +12,7 @@ public abstract class Barco implements Comparable<Barco>{
     int longitud;
     String denom;
     char secciones;
-    int[][] centro;
+    int[][] centro = new int[1][1];
     boolean isDestroid = false;
     
 
