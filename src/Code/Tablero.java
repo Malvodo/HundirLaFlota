@@ -9,5 +9,10 @@ package Code;
  * @author barrodgu
  */
 public class Tablero {
+    char[][] table = new char[10][10];
+
+    public Tablero() {
+        
+    }
     
 }

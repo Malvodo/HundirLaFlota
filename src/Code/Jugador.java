@@ -9,5 +9,15 @@ package Code;
  * @author barrodgu
  */
 public class Jugador {
+    int barcos;
+    int puntos;
+    String nombre;
+
+    public Jugador(int barcos, int puntos, String nombre) {
+        this.barcos = barcos;
+        this.puntos = puntos;
+        this.nombre = nombre;
+    }
+    
     
 }
