@@ -34,11 +34,11 @@ public abstract class Barco implements Comparable<Barco>{
         this.longitud = longitud;
     }
 
-    public int getDenom() {
+    public String getDenom() {
         return denom;
     }
 
-    public void setDenom(int denom) {
+    public void setDenom(String denom) {
         this.denom = denom;
     }
 
