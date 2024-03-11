@@ -4,10 +4,22 @@
  */
 package Code;
 
+import static View.MenuHundir.menuHundir;
+
 /**
  *
  * @author barrodgu
  */
 public class Hundir {
+    
+    public static void hundir(Jugador jugador1, Jugador jugador2){
+        menuHundir(); 
+    }
+    
+    public static void comprobarCasilla(){
+        if(jugador1.){
+            
+        }
+    }
     
 }
