@@ -17,9 +17,7 @@ public class Hundir {
     }
     
     public static void comprobarCasilla(){
-        if(jugador1.){
-            
-        }
+        
     }
     
 }
