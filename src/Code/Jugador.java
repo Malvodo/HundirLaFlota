@@ -9,5 +9,13 @@ package Code;
  * @author barrodgu
  */
 public class Jugador {
+    char[][] tablero;
+    String nombre;
+
+    public Jugador(String nombre) {
+        this.tablero = new char[10][10];
+        this.nombre = nombre;
+    }
+    
     
 }
