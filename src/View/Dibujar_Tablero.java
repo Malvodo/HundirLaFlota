@@ -4,11 +4,17 @@
  */
 package View;
 
+import Code.Jugador;
+import java.util.Scanner;
+
 /**
  *
  * @author barrodgu
  */
 public class Dibujar_Tablero {
+    
+    public static Jugador jugador1;
+    public static Jugador jugador2;
     
     public static void Tablero() {
 
@@ -34,6 +40,19 @@ public class Dibujar_Tablero {
             }
             System.out.println();
         }
+    }
+    
+    public static void pedirNombre(){
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Nombre para el jugador 1? ");
+        jugador1 = new Jugador(sc.next());
+        
+        System.out.println("Nombre para el jugador 2? ");
+        jugador2 = new Jugador(sc.next());
+        
+        System.out.println(jugador1.getNombre());
+        System.out.println(jugador2.getNombre());
     }
     
 }

@@ -4,6 +4,8 @@
  */
 package Main;
 
+import static View.Dibujar_Tablero.pedirNombre;
+
 /**
  *
  * @author barrodgu
@@ -11,9 +13,7 @@ package Main;
 public class main {
     
     public static void main(String[] args) {
-        
-        
-        
+        pedirNombre();
     }
     
 }
