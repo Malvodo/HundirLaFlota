@@ -9,13 +9,11 @@ package Code;
  * @author barrodgu
  */
 public class Jugador {
-    int barcos;
-    int puntos;
+    char[][] tablero;
     String nombre;
 
-    public Jugador(int barcos, int puntos, String nombre) {
-        this.barcos = barcos;
-        this.puntos = puntos;
+    public Jugador(String nombre) {
+        this.tablero = new char[10][10];
         this.nombre = nombre;
     }
     
