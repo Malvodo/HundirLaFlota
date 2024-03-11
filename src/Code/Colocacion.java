@@ -10,4 +10,7 @@ package Code;
  */
 public class Colocacion {
     
+    public void colocacion(){
+        
+    }
 }
