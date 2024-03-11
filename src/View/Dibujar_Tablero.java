@@ -4,8 +4,6 @@
  */
 package View;
 
-import java.util.Scanner;
-
 /**
  *
  * @author barrodgu
@@ -13,14 +11,13 @@ import java.util.Scanner;
 public class Dibujar_Tablero {
     
     public static void Tablero() {
-        Scanner scanner = new Scanner(System.in);
 
         char[][] tablero = new char[10][10]; // Tablero de 5x5
 
         // Inicializar tablero vacio
         for (int i = 0; i < tablero.length; i++) {
             for (int j = 0; j < tablero[i].length; j++) {
-                tablero[i][j] = ' '; 
+                tablero[i][j] = '~'; 
             }
         }
 
@@ -31,8 +28,9 @@ public class Dibujar_Tablero {
 
     public static void mostrarTablero(char[][] tablero) {
         for (int i = 0; i < tablero.length; i++) {
+            System.out.print("|");
             for (int j = 0; j < tablero[i].length; j++) {
-                System.out.print(tablero[i][j] + " ");
+                System.out.print(tablero[i][j] + "|");
             }
             System.out.println();
         }
