@@ -10,4 +10,8 @@ package View;
  */
 public class Final {
     
+    public static void pantallaFinal(){
+        
+    }
+    
 }

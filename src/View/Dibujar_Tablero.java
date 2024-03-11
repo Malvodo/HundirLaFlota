@@ -4,6 +4,8 @@
  */
 package View;
 
+import java.util.Scanner;
+
 /**
  *
  * @author barrodgu
