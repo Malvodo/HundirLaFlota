@@ -4,10 +4,26 @@
  */
 package Code;
 
+import View.MenuColocarBarco;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  *
  * @author barrodgu
  */
 public class Colocacion {
+
+    public void colocacion(){
+        comprobarT(MenuColocarBarco.elegirbarco(), )
+    }
     
+    public Barco comprobarT(char bt, Barco[] barcos) throws Exception{
+        for (int i = 0; i < barcos.length; i++) {
+            if(bt == barcos[i].getDenom().charAt(0)){
+                return barcos[i];
+            } 
+        }
+        throw new Exception("no existe este tipo de barco");
+    }
 }

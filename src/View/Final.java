@@ -5,7 +5,6 @@
 package View;
 
 import static Code.EleccionFinal.eleccionFinal;
-import Code.Jugador;
 
 /**
  *
@@ -15,7 +14,7 @@ public class Final {
     
     public static void pantallaFinal(){
      
-        System.out.println("Enhorabuena " + /*ganador +*/ " ha ganado");
+        System.out.println("Enhorabuena el " + /*ganardor +*/  " ha ganado");
         
         System.out.println();
         

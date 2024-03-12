@@ -4,10 +4,6 @@
  */
 package Main;
 
-import View.Dibujar_Tablero;
-import static View.Dibujar_Tablero.pedirNombre;
-import java.util.Arrays;
-
 /**
  *
  * @author barrodgu
@@ -15,7 +11,8 @@ import java.util.Arrays;
 public class main {
     
     public static void main(String[] args) {
-        char[][] tableronuevo1 = Dibujar_Tablero.Tablero();
+        
+        
         
     }
     

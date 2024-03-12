@@ -16,10 +16,19 @@ public class MenuHundir {
    
         System.out.println("CASILLA A HUNDIR?");
         System.out.println("Elija la Columna de la casilla");
-        int columna = sc.nextInt();
-        
+        columna();
         System.out.println("Elija la fila de la casilla");
+        fila();
+    }
+    
+    public static int columna(){
+        int columna = sc.nextInt();
+        return columna;
+    }
+    
+    public static char fila(){
         char fila = sc.next().charAt(0);
+        return fila;
     }
     
 }
