@@ -9,11 +9,11 @@ package Code;
  * @author barrodgu
  */
 public class Barco implements Comparable<Barco>{
-    int longitud;
-    String denom;
-    char secciones;
-    int[][] centro = new int[1][1];
-    boolean isDestroid = false;
+    private int longitud;
+    private String denom;
+    private char secciones;
+    private int[][] centro = new int[1][1];
+    private boolean isDestroid = false;
     
 
     public Barco(int longitud, String denom) {
