@@ -18,7 +18,7 @@ public class Dibujar_Tablero {
     
     public static void Tablero() {
 
-        char[][] tablero = new char[10][10]; // Tablero de 5x5
+        char[][] tablero = new char[10][10]; // Tablero de 10x10
 
         // Inicializar tablero vacio
         for (int i = 0; i < tablero.length; i++) {
