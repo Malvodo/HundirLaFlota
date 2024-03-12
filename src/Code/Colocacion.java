@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class Colocacion {
 
     public void colocacion(){
-        comprobarT(MenuColocarBarco.elegirbarco(), )
+        
     }
     
     public Barco comprobarT(char bt, Barco[] barcos) throws Exception{
