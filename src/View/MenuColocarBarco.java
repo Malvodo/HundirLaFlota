@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class MenuColocarBarco {
     
-    public char elegirbarco(){
+    public static char elegirbarco(){
         Scanner sc = new Scanner(System.in);
         
         System.out.println("Introduce que barco quieres colocar(portaviones, buque, submarino, lancha)");

@@ -28,6 +28,30 @@ public class Jugador {
             new Barco(1, "lancha")
         };
     }
+
+    public char[][] getTablero() {
+        return tablero;
+    }
+
+    public void setTablero(char[][] tablero) {
+        this.tablero = tablero;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Barco[] getBarcos() {
+        return barcos;
+    }
+
+    public void setBarcos(Barco[] barcos) {
+        this.barcos = barcos;
+    }
     
     
 }
