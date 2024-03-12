@@ -9,21 +9,35 @@ package Code;
  * @author barrodgu
  */
 public class Jugador {
+
     char[][] tablero;
     String nombre;
+    Barco[] barcos;
 
     public Jugador(String nombre) {
         this.tablero = new char[10][10];
         this.nombre = nombre;
+        barcos = new Barco[]{
+            new Barco(5, "portaviones"),
+            new Barco(3, "buque"),
+            new Barco(3, "buque"),
+            new Barco(3, "buque"),
+            new Barco(2, "submarino"),
+            new Barco(2, "submarino"),
+            new Barco(2, "submarino"),
+            new Barco(1, "lancha"),
+            new Barco(1, "lancha")
+        };
     }
 
-    @Override
-    public String toString() {
-        return "Jugador{" + "nombre=" + nombre + '}';
+    public Barco[] getBarcos() {
+        return barcos;
+    }
+
+    public void setBarcos(Barco[] barcos) {
+        this.barcos = barcos;
     }
     
-    
-
     public char[][] getTablero() {
         return tablero;
     }
@@ -39,6 +53,9 @@ public class Jugador {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "Jugador{" + "nombre=" + nombre + '}';
+    }
 }

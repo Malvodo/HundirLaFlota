@@ -17,7 +17,6 @@ public class MenuColocarBarco {
         
         System.out.println("Introduce que barco quieres colocar(portaviones, buque, submarino, lancha)");
         return sc.next().toLowerCase().charAt(0);
-        
     }
     
     public static void menuColocar(){
@@ -31,9 +30,6 @@ public class MenuColocarBarco {
         
         System.out.println("Elija la fila de la casilla");
         char fila = sc.next().charAt(0);
-
-        
-        
     }
     
 }
