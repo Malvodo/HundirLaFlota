@@ -16,7 +16,7 @@ public class Dibujar_Tablero {
     public static Jugador jugador1;
     public static Jugador jugador2;
     
-    public static void Tablero() {
+    public static char[][] Tablero() {
 
         char[][] tablero = new char[10][10]; // Tablero de 10x10
 
@@ -26,13 +26,11 @@ public class Dibujar_Tablero {
                 tablero[i][j] = '~'; 
             }
         }
-
-        // Mostrar tablero inicial
-        System.out.println("Tablero inicial:");
-        mostrarTablero(tablero);
+        //devuelve el tablero
+        return mostrarTablero(tablero);
     }
 
-    public static void mostrarTablero(char[][] tablero) {
+    public static char[][] mostrarTablero(char[][] tablero) {
         for (int i = 0; i < tablero.length; i++) {
             System.out.print("|");
             for (int j = 0; j < tablero[i].length; j++) {
@@ -40,6 +38,7 @@ public class Dibujar_Tablero {
             }
             System.out.println();
         }
+        return tablero;
     }
     
     public static void pedirNombre(){
@@ -50,9 +49,10 @@ public class Dibujar_Tablero {
         
         System.out.println("Nombre para el jugador 2? ");
         jugador2 = new Jugador(sc.next());
+
+        jugador1.setTablero(Tablero());
+        jugador2.setTablero(Tablero());
         
-        System.out.println(jugador1.getNombre());
-        System.out.println(jugador2.getNombre());
     }
     
 }
