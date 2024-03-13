@@ -12,28 +12,27 @@ import View.MenuColocarBarco;
  */
 public class Colocacion {
 
-    public void colocacion(Barco[] b, char[][] tabl){
-        
+    public void colocacion(Barco[] b, char[][] tabl) {
         try {
-            Barco brc = null;
-            brc = comprobarT(MenuColocarBarco.elegirbarco(), b);
-            brc.setCentro(MenuColocarBarco.menuColocar());
-            brc.Rotation(MenuColocarBarco.girarbarco(), tabl);
-            if(!MenuColocarBarco.confirmacion()){
-                colocacion(b, tabl);
+            for (int i = 0; i < tabl.length; i++) {
+                do {
+                    Barco brc = null;
+                    brc = comprobarT(MenuColocarBarco.elegirbarco(), b);
+                    brc.setCentro(MenuColocarBarco.menuColocar());
+                    brc.Rotation(MenuColocarBarco.girarbarco(), tabl);
+                } while (!MenuColocarBarco.confirmacion());
             }
-            
         } catch (Exception ex) {
             ex.getMessage();
             colocacion(b, tabl);
         }
     }
-    
-    public Barco comprobarT(char bt, Barco[] barcos) throws Exception{
+
+    public Barco comprobarT(char bt, Barco[] barcos) throws Exception {
         for (int i = 0; i < barcos.length; i++) {
-            if(bt == barcos[i].getDenom().charAt(0)){
+            if (bt == barcos[i].getDenom().charAt(0)) {
                 return barcos[i];
-            } 
+            }
         }
         throw new Exception("no existe este tipo de barco");
     }
