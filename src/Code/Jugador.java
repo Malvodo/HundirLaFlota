@@ -10,9 +10,9 @@ package Code;
  */
 public class Jugador {
 
-    char[][] tablero;
-    String nombre;
-    Barco[] barcos;
+    private char[][] tablero;
+    private String nombre;
+    private Barco[] barcos;
 
     public Jugador(String nombre) {
         this.tablero = new char[10][10];

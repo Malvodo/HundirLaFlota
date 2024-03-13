@@ -5,8 +5,6 @@
 package Code;
 
 import View.MenuColocarBarco;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 /**
  *
@@ -14,8 +12,21 @@ import java.util.Scanner;
  */
 public class Colocacion {
 
-    public void colocacion(){
+    public void colocacion(Barco[] b, char[][] tabl){
         
+        try {
+            Barco brc = null;
+            brc = comprobarT(MenuColocarBarco.elegirbarco(), b);
+            brc.setCentro(MenuColocarBarco.menuColocar());
+            brc.Rotation(MenuColocarBarco.girarbarco(), tabl);
+            
+            
+            
+            
+        } catch (Exception ex) {
+            ex.getMessage();
+            colocacion(b, tabl);
+        }
     }
     
     public Barco comprobarT(char bt, Barco[] barcos) throws Exception{

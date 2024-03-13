@@ -12,6 +12,21 @@ import java.util.Scanner;
  */
 public class MenuColocarBarco {
     
+    public static boolean girarbarco(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Quires girar barco?(s/n):");
+        char c= sc.nextLine().toLowerCase().charAt(0);
+        if(c == 's'){
+            return true;
+        }else if(c == 'n'){
+            return false;
+        }else{
+            System.out.println("Respuesta no indentificada:");
+            girarbarco();
+        }
+        return false;
+    }
+    
     public static char elegirbarco(){
         Scanner sc = new Scanner(System.in);
         
@@ -19,7 +34,7 @@ public class MenuColocarBarco {
         return sc.next().toLowerCase().charAt(0);
     }
     
-    public static void menuColocar(){
+    public static int[][] menuColocar(){
         
         Scanner sc = new Scanner(System.in);
         
@@ -29,7 +44,9 @@ public class MenuColocarBarco {
         int columna = sc.nextInt();
         
         System.out.println("Elija la fila de la casilla");
-        char fila = sc.next().charAt(0);
+        int fila = sc.next().charAt(0);
+        int[][] ct = new int[][]{{columna},{fila}};
+        return ct;
     }
     
 }
