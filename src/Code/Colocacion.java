@@ -19,9 +19,9 @@ public class Colocacion {
             brc = comprobarT(MenuColocarBarco.elegirbarco(), b);
             brc.setCentro(MenuColocarBarco.menuColocar());
             brc.Rotation(MenuColocarBarco.girarbarco(), tabl);
-            
-            
-            
+            if(!MenuColocarBarco.confirmacion()){
+                colocacion(b, tabl);
+            }
             
         } catch (Exception ex) {
             ex.getMessage();

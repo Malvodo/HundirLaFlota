@@ -12,6 +12,24 @@ import java.util.Scanner;
  */
 public class MenuColocarBarco {
     
+    
+    
+    public static boolean confirmacion(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Quieres dejar el barco ahi?");
+        char c= sc.nextLine().toLowerCase().charAt(0);
+        if(c == 's'){
+            return true;
+        }else if(c == 'n'){
+            return false;
+        }else{
+            System.out.println("Respuesta no indentificada:");
+            confirmacion();
+        }
+        return false;
+    }
+    
+
     public static boolean girarbarco(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Quires girar barco?(s/n):");
@@ -24,8 +42,10 @@ public class MenuColocarBarco {
             System.out.println("Respuesta no indentificada:");
             girarbarco();
         }
+        
         return false;
     }
+    
     
     public static char elegirbarco(){
         Scanner sc = new Scanner(System.in);
