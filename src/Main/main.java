@@ -5,6 +5,7 @@
 package Main;
 
 import Code.Colocacion;
+import static Code.Hundir.hundir;
 import Code.Jugador;
 import View.Dibujar_Tablero;
 
@@ -21,17 +22,21 @@ public class main {
         Jugador jugador1 = Dibujar_Tablero.jugador1;
         Jugador jugador2 = Dibujar_Tablero.jugador2;
 
+        
         Colocacion colocacion = new Colocacion();
         do{
             System.out.println("Turno de " + jugador1.getNombre());
-            colocacion.colocacion(jugador1.getBarcos(), jugador1.getTablero(),jugador1);
-        }while(colocacion.getCont() > 0);
+            colocacion.colocacion(jugador1.getBarcos(), jugador1.getTablero(), jugador1);
+        }while(jugador1.getContturno() > 22);
+        
         do{
             System.out.println("Turno de " + jugador2.getNombre());
-            colocacion.colocacion(jugador2.getBarcos(), jugador2.getTablero(),jugador2);
-        }while(colocacion.getCont() > 0);
-
+            colocacion.colocacion(jugador2.getBarcos(), jugador2.getTablero(), jugador2);
+        }while(jugador2.getContturno() > 22);
+        
         //hundir
+        hundir();
+        
     }
     
 }

@@ -8,48 +8,36 @@ package Code;
  *
  * @author barrodgu
  */
-public class Barco implements Comparable<Barco> {
-
+public class Barco implements Comparable<Barco>{
     private int longitud;
     private String denom;
     private char secciones;
     private int[][] centro = new int[1][1];
     private boolean isDestroid = false;
+    
 
     public Barco(int longitud, String denom) {
         this.longitud = longitud;
         this.denom = denom;
-        secciones = this.denom.toUpperCase().charAt(0);
-    }
-
-    public void Rotation(boolean isHorizontal, char[][] tablero) throws Exception {
-        comprotacion(isHorizontal, tablero);
-        if (isHorizontal) {
-            tablero[centro[0][0]][centro[0][0]] = secciones;
-            for (int i = 1; i < longitud / 2 + 1; i++) {
-                tablero[centro[0][0] + i][centro[0][0]] = secciones;
-                tablero[centro[0][0] - i][centro[0][0]] = secciones;
-            }
-        } else {
-            for (int i = 1; i < longitud / 2 + 1; i++) {
-                tablero[centro[0][0]][centro[0][0] + i] = secciones;
-                tablero[centro[0][0]][centro[0][0] - i] = secciones;
-            }
-        }
+        secciones =this.denom.toUpperCase().charAt(0);
     }
     
-    private void comprotacion(boolean isHorizontal, char[][] tablero) throws Exception{
-        if (isHorizontal) {
-            for (int i = 1; i < longitud / 2 + 1; i++) {
-                if(tablero[centro[0][0] + i][centro[0][0]] != '~' || tablero[centro[0][0] - i][centro[0][0]] != '~') throw new Exception();
-            }
-        } else {
-            for (int i = 1; i < longitud / 2 + 1; i++) {
-                if(tablero[centro[0][0]][centro[0][0] + i] != '~' || tablero[centro[0][0]][centro[0][0] - i] != '~' ) throw new Exception();
-            }
+
+    public void Rotation(boolean isHorizontal, char[][] tablero){
+    if (isHorizontal) {
+        tablero[centro[0][0]][centro[0][0]] = secciones;
+        for (int i = 1; i < longitud / 2 + 1; i++) {
+            tablero[centro[0][0] + i][centro[0][0]] = secciones;
+            tablero[centro[0][0] - i][centro[0][0]] = secciones;
+        }
+    } else {
+        for (int i = 1; i < longitud / 2 + 1; i++) {
+            tablero[centro[0][0]][centro[0][0] + i] = secciones;
+            tablero[centro[0][0]][centro[0][0] - i] = secciones;
         }
     }
-
+}
+    
     public boolean isIsDestroid() {
         return isDestroid;
     }
@@ -57,7 +45,7 @@ public class Barco implements Comparable<Barco> {
     public void setIsDestroid(boolean isDestroid) {
         this.isDestroid = isDestroid;
     }
-
+    
     public int getLongitud() {
         return longitud;
     }

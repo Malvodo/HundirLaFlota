@@ -4,9 +4,6 @@
  */
 package Code;
 
-import View.MenuColocarBarco;
-import java.util.Scanner;
-
 /**
  *
  * @author barrodgu
@@ -15,7 +12,10 @@ public class Jugador {
 
     private char[][] tablero;
     private String nombre;
-    private Barco[] barcos;
+    protected Barco[] barcos;
+    
+    private int contMax;
+    private int contturno;
     
     public Jugador(String nombre) {
         this.tablero = new char[10][10];
@@ -33,6 +33,8 @@ public class Jugador {
         };
         inicializarTablero();
 
+        maxturno();
+        contMax = 9;
     }
     
     //crea tablero y le pone las olas
@@ -53,6 +55,13 @@ public class Jugador {
                 System.out.print(tablero[i][j] + " ");
             }
             System.out.println();
+        }
+    }
+    
+    public void maxturno(){
+        int max = 0;
+        for(int i = 0;i < this.getBarcos().length;i++){
+            setContturno(max + this.barcos[i].getLongitud()); 
         }
     }
 
@@ -78,6 +87,22 @@ public class Jugador {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public int getContMax() {
+        return contMax;
+    }
+
+    public void setContMax(int contMax) {
+        this.contMax = contMax;
+    }
+
+    public int getContturno() {
+        return contturno;
+    }
+
+    public void setContturno(int contturno) {
+        this.contturno = contturno;
     }
 
     
