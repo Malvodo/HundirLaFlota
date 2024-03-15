@@ -5,16 +5,16 @@
 package Main;
 
 import Code.Colocacion;
+import static Code.Hundir.hundir;
 import Code.Jugador;
 import View.Dibujar_Tablero;
-
 
 /**
  *
  * @author barrodgu
  */
 public class main {
-    
+
     public static void main(String[] args) {
         Dibujar_Tablero.pedirNombre(); // Pedir nombres de jugadores
 
@@ -22,16 +22,15 @@ public class main {
         Jugador jugador2 = Dibujar_Tablero.jugador2;
 
         Colocacion colocacion = new Colocacion();
-        do{
-            System.out.println("Turno de " + jugador1.getNombre());
-            colocacion.colocacion(jugador1.getBarcos(), jugador1.getTablero(),jugador1);
-        }while(colocacion.getCont() > 0);
-        do{
-            System.out.println("Turno de " + jugador2.getNombre());
-            colocacion.colocacion(jugador2.getBarcos(), jugador2.getTablero(),jugador2);
-        }while(colocacion.getCont() > 0);
+        System.out.println("Turno de " + jugador1.getNombre());
+        colocacion.colocabarco(jugador1.getBarcos(), jugador1.getTablero(), jugador1);
 
-        //hundir
+        System.out.println("Turno de " + jugador2.getNombre());
+        colocacion.colocabarco(jugador2.getBarcos(), jugador2.getTablero(), jugador2);
+
+        hundir();
+
+        
     }
-    
+
 }

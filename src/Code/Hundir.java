@@ -4,8 +4,10 @@
  */
 package Code;
 
-import View.Dibujar_Tablero;
-import java.util.Arrays;
+import Code.Jugador;
+import static View.Dibujar_Tablero.jugador1;
+import static View.Dibujar_Tablero.jugador2;
+import View.MenuColocarBarco;
 import java.util.Scanner;
 
 /**
@@ -14,67 +16,56 @@ import java.util.Scanner;
  */
 public class Hundir {
     
+    public static Jugador tablero1 = new Jugador("tablero1");
+    public static Jugador tablero2 = new Jugador("tablero2");
+    
     public static void hundir(){
-        Scanner sc = new Scanner(System.in);
-        
-        int portaviones1 = 5;
-        int buque1 = 9;
-        int submarino1 = 6;
-        int lancha1 = 2;
-        
-        int portaviones2 = 5;
-        int buque2 = 9;
-        int submarino2 = 6;
-        int lancha2 = 2;
-        
-        int cont1 = portaviones1 + buque1 + lancha1 + submarino1;
-        int cont2 = portaviones2 + buque2 + lancha2 + submarino2;
-        
-        boolean turno = true;
-        
-        String jugador1 = Dibujar_Tablero.jugador1.getNombre();
-        String jugador2 = Dibujar_Tablero.jugador2.getNombre();
-        
-        char[][] tablero1 = Dibujar_Tablero.jugador1.getTablero();
-        char[][] tablero2 = Dibujar_Tablero.jugador2.getTablero();
-        char[][] tableronuevo1 = Dibujar_Tablero.Tablero();
-        char[][] tableronuevo2 = Dibujar_Tablero.Tablero();
-        
-        while(cont1 > 0 ||cont2 > 0){
+        do{
+            System.out.println("Turno de ataque de: " + jugador1.getNombre());
+            ataque(jugador2.getTablero(), tablero1.getTablero(), jugador2); //ataque del jugador 1
+            tablero1.mostrarTablero();
             
-            if(turno = true){
-                
-                
-                System.out.println("Turno de " + jugador1);
-
-                System.out.println("CASILLA A HUNDIR?");
-                System.out.println("Elija la Columna de la casilla");
-                int columna = sc.nextInt();
-
-                System.out.println("Elija la fila de la casilla");
-                char fila = sc.next().charAt(0);
-
-                if(tablero2[fila][columna] == 'P' /*|| tablero1[fila][columna] == 'S' || tablero1[fila][columna] == 'B' || tablero1[fila][columna] == 'L'*/){
-                    portaviones1--;
-                    cont1--;
-
-                    tableronuevo1[fila][columna] = 'X';
-
-                    if(portaviones1 > 0){
-                        System.out.println("Tocado");
-
-                    }else if(portaviones1 == 0){
-                        System.out.println("Hundido");
-                    }        
-                }
-            
-            }else if(turno = false){
-                
-            }
-        }
-        
-        
+            System.out.println("Turno de ataque de: " + jugador2.getNombre());
+            ataque(jugador1.getTablero(), tablero2.getTablero(), jugador1); //ataque del jugador 2
+            tablero2.mostrarTablero();
+        }while(jugador1.getContMax() > 0 || jugador2.getContMax() > 0);
+        terminar();
         
     }
-
+    
+    public static void terminar(){
+        if(jugador1.getContMax() == 0){
+            System.out.println("Ha ganaado " + jugador1.getNombre());
+        }else {
+            System.out.println("Ha ganaado " + jugador2.getNombre());
+        }
+    }
+    
+    public static void ataque(char[][] tableroJugador, char[][] TableroResolver, Jugador jugador){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("CASILLA A HUNDIR?");
+        System.out.println("Elija la Columna de la casilla");
+        int columna = sc.nextInt();
+        
+        System.out.println("Elija la fila de la casilla");
+        int fila = sc.nextInt();
+        
+        if(tableroJugador[columna][fila] == '~'){
+            TableroResolver[columna][fila] = 'O';
+            
+            
+        }else{
+            System.out.println("Barco Tocado");
+            TableroResolver[columna][fila] = 'X';
+            
+            for(int i = 0;i < jugador.barcos.length;i++){
+                if(jugador.barcos[i].getLongitud() <= 0){
+                    System.out.println("Barco hundido");
+                    jugador.setContMax(jugador.getContMax() - 1);
+                    
+                    
+                }
+            }
+        }
+    }
 }

@@ -15,7 +15,14 @@ public class Jugador {
 
     private char[][] tablero;
     private String nombre;
-    private Barco[] barcos;
+    protected Barco[] barcos;
+    
+    private int contPortaviones;
+    private int contBuque;
+    private int contSubmarino;
+    private int contLancha;
+    
+    private int contMax;
     
     public Jugador(String nombre) {
         this.tablero = new char[10][10];
@@ -32,7 +39,14 @@ public class Jugador {
             new Barco(1, "lancha")
         };
         inicializarTablero();
-
+        
+        contPortaviones = 1;
+        contBuque = 3;
+        contSubmarino = 3;
+        contLancha = 2;
+        
+        contMax = 9;
+        
     }
     
     //crea tablero y le pone las olas
@@ -47,8 +61,10 @@ public class Jugador {
     //muestra el tablero
     public void mostrarTablero() {
         System.out.println("   0 1 2 3 4 5 6 7 8 9");
+        int c = 9;
         for (int i = 0; i < tablero.length; i++) {
-            System.out.print(i  + "  ");
+            System.out.print(c  + "  ");
+            c--;
             for (int j = 0; j < tablero[i].length; j++) {
                 System.out.print(tablero[i][j] + " ");
             }
@@ -56,6 +72,16 @@ public class Jugador {
         }
     }
 
+    public int getContMax() {
+        return contMax;
+    }
+
+    public void setContMax(int contMax) {
+        this.contMax = contMax;
+    }
+
+    
+    
     public Barco[] getBarcos() {
         return barcos;
     }
@@ -78,6 +104,38 @@ public class Jugador {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public int getContPortaviones() {
+        return contPortaviones;
+    }
+
+    public void setContPortaviones(int contPortaviones) {
+        this.contPortaviones = contPortaviones;
+    }
+
+    public int getContBuque() {
+        return contBuque;
+    }
+
+    public void setContBuque(int contBuque) {
+        this.contBuque = contBuque;
+    }
+
+    public int getContSubmarino() {
+        return contSubmarino;
+    }
+
+    public void setContSubmarino(int contSubmarino) {
+        this.contSubmarino = contSubmarino;
+    }
+
+    public int getContLancha() {
+        return contLancha;
+    }
+
+    public void setContLancha(int contLancha) {
+        this.contLancha = contLancha;
     }
 
     
