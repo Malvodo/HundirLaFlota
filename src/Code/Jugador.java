@@ -17,6 +17,11 @@ public class Jugador {
     private String nombre;
     private Barco[] barcos;
     
+    private int contPortaviones;
+    private int contBuque;
+    private int contSubmarino;
+    private int contLancha;
+    
     public Jugador(String nombre) {
         this.tablero = new char[10][10];
         this.nombre = nombre;
@@ -32,6 +37,11 @@ public class Jugador {
             new Barco(1, "lancha")
         };
         inicializarTablero();
+        
+        contPortaviones = 1;
+        contBuque = 3;
+        contSubmarino = 3;
+        contLancha = 2;
 
     }
     
@@ -78,6 +88,38 @@ public class Jugador {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public int getContPortaviones() {
+        return contPortaviones;
+    }
+
+    public void setContPortaviones(int contPortaviones) {
+        this.contPortaviones = contPortaviones;
+    }
+
+    public int getContBuque() {
+        return contBuque;
+    }
+
+    public void setContBuque(int contBuque) {
+        this.contBuque = contBuque;
+    }
+
+    public int getContSubmarino() {
+        return contSubmarino;
+    }
+
+    public void setContSubmarino(int contSubmarino) {
+        this.contSubmarino = contSubmarino;
+    }
+
+    public int getContLancha() {
+        return contLancha;
+    }
+
+    public void setContLancha(int contLancha) {
+        this.contLancha = contLancha;
     }
 
     
