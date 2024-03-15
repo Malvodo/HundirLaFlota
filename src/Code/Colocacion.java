@@ -31,8 +31,8 @@ public class Colocacion {
     }
 
     public void colocabarco(Barco[] b, char[][] tabl, Jugador jugador) {
-        cont = 2;//jugador.getContPortaviones() + jugador.getContBuque()
-//                + jugador.getContSubmarino() + jugador.getContLancha();
+        cont = jugador.getContPortaviones() + jugador.getContBuque()
+                + jugador.getContSubmarino() + jugador.getContLancha();
         while (cont > 0) {
             colocacion(b, tabl, jugador);
         }
