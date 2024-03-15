@@ -25,12 +25,20 @@ public class Hundir {
             ataque(jugador2.getTablero(), tablero1.getTablero(), jugador2); //ataque del jugador 1
             tablero1.mostrarTablero();
             
-            System.out.println("Turno de ataque de: " + jugador1.getNombre());
+            System.out.println("Turno de ataque de: " + jugador2.getNombre());
             ataque(jugador1.getTablero(), tablero2.getTablero(), jugador1); //ataque del jugador 2
             tablero2.mostrarTablero();
         }while(jugador1.getContMax() > 0 || jugador2.getContMax() > 0);
+        terminar();
         
-        
+    }
+    
+    public static void terminar(){
+        if(jugador1.getContMax() == 0){
+            System.out.println("Ha ganaado " + jugador1.getNombre());
+        }else {
+            System.out.println("Ha ganaado " + jugador2.getNombre());
+        }
     }
     
     public static void ataque(char[][] tableroJugador, char[][] TableroResolver, Jugador jugador){
@@ -55,18 +63,6 @@ public class Hundir {
                     System.out.println("Barco hundido");
                     jugador.setContMax(jugador.getContMax() - 1);
                     
-                    if(MenuColocarBarco.elegirbarco() == 'p'){
-                        jugador.barcos[i].setLongitud(jugador.barcos[i].getLongitud() - 1 );
-                    }
-                    if(MenuColocarBarco.elegirbarco() == 'b'){
-                        jugador.barcos[i].setLongitud(jugador.barcos[i].getLongitud() - 1 );
-                    }
-                    if(MenuColocarBarco.elegirbarco() == 's'){
-                        jugador.barcos[i].setLongitud(jugador.barcos[i].getLongitud() - 1 );
-                    }
-                    if(MenuColocarBarco.elegirbarco() == 'l'){
-                        jugador.barcos[i].setLongitud(jugador.barcos[i].getLongitud() - 1 );
-                    }
                     
                 }
             }

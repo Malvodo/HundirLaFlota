@@ -22,6 +22,7 @@ public class Colocacion {
                 b[t].setCentro(MenuColocarBarco.menuColocar());
                 b[t].Rotation(MenuColocarBarco.girarbarco(), tabl);
                 jugador.mostrarTablero(); // Mostrar el tablero actualizado
+                cont--;
             } while (!MenuColocarBarco.confirmacion());
         } catch (Exception ex) {
             ex.getMessage();
@@ -30,8 +31,8 @@ public class Colocacion {
     }
 
     public void colocabarco(Barco[] b, char[][] tabl, Jugador jugador) {
-        int cont = jugador.getContPortaviones() + jugador.getContBuque()
-                + jugador.getContSubmarino() + jugador.getContLancha();
+        cont = 2;//jugador.getContPortaviones() + jugador.getContBuque()
+//                + jugador.getContSubmarino() + jugador.getContLancha();
         while (cont > 0) {
             colocacion(b, tabl, jugador);
         }
