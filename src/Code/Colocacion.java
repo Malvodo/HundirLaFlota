@@ -14,35 +14,14 @@ public class Colocacion {
 
     private int cont;
     
-    public void colocacion(Barco[] b, char[][] tabl, Jugador jugador) {
-    try {
-        for (int i = 0; i < tabl.length; i++) {
-            do {
-                Barco brc = null;        
-                brc = comprobarT(MenuColocarBarco.elegirbarco(), b);      
-                brc.setCentro(MenuColocarBarco.menuColocar());
-                brc.Rotation(MenuColocarBarco.girarbarco(), tabl);
-                jugador.mostrarTablero(); // Mostrar el tablero actualizado
-            } while (!MenuColocarBarco.confirmacion());
-        }
-    } catch (Exception ex) {
-        ex.getMessage();
-        colocacion(b, tabl,jugador);
-    }
-}
-
-    public Barco comprobarT(char bt, Barco[] barcos) throws Exception {
 
     public void colocacion(Barco[] b, char[][] tabl, Jugador jugador) {
         try {
-            cont = 1;
             do {
                 int t = comprobarT(MenuColocarBarco.elegirbarco(), b, jugador);
                 b[t].setCentro(MenuColocarBarco.menuColocar());
                 b[t].Rotation(MenuColocarBarco.girarbarco(), tabl);
                 jugador.mostrarTablero(); // Mostrar el tablero actualizado
-                cont--;
-                System.out.println(cont);
             } while (!MenuColocarBarco.confirmacion());
         } catch (Exception ex) {
             ex.getMessage();

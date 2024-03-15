@@ -35,7 +35,6 @@ public class Hundir {
     
     public static void ataque(char[][] tableroJugador, char[][] TableroResolver, Jugador jugador){
         Scanner sc = new Scanner(System.in);
-        jugador.mostrarTablero();
         System.out.println("CASILLA A HUNDIR?");
         System.out.println("Elija la Columna de la casilla");
         int columna = sc.nextInt();

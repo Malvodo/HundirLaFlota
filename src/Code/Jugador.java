@@ -15,12 +15,14 @@ public class Jugador {
 
     private char[][] tablero;
     private String nombre;
-    private Barco[] barcos;
+    protected Barco[] barcos;
     
     private int contPortaviones;
     private int contBuque;
     private int contSubmarino;
     private int contLancha;
+    
+    private int contMax;
     
     public Jugador(String nombre) {
         this.tablero = new char[10][10];
@@ -42,7 +44,9 @@ public class Jugador {
         contBuque = 3;
         contSubmarino = 3;
         contLancha = 2;
-
+        
+        contMax = 9;
+        
     }
     
     //crea tablero y le pone las olas
@@ -66,6 +70,16 @@ public class Jugador {
         }
     }
 
+    public int getContMax() {
+        return contMax;
+    }
+
+    public void setContMax(int contMax) {
+        this.contMax = contMax;
+    }
+
+    
+    
     public Barco[] getBarcos() {
         return barcos;
     }
