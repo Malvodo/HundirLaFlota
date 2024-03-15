@@ -17,24 +17,24 @@ import View.Dibujar_Tablero;
 public class main {
     
     public static void main(String[] args) {
-        Dibujar_Tablero.pedirNombre(); // Pedir nombres de jugadores
-
-        Jugador jugador1 = Dibujar_Tablero.jugador1;
-        Jugador jugador2 = Dibujar_Tablero.jugador2;
-
-        
-        Colocacion colocacion = new Colocacion();
-        do{
-            System.out.println("Turno de " + jugador1.getNombre());
-            colocacion.colocacion(jugador1.getBarcos(), jugador1.getTablero(), jugador1);
-        }while(jugador1.getContturno() > 22);
-        
-        do{
-            System.out.println("Turno de " + jugador2.getNombre());
-            colocacion.colocacion(jugador2.getBarcos(), jugador2.getTablero(), jugador2);
-        }while(jugador2.getContturno() > 22);
-        
-        //hundir
+//        Dibujar_Tablero.pedirNombre(); // Pedir nombres de jugadores
+//
+//        Jugador jugador1 = Dibujar_Tablero.jugador1;
+//        Jugador jugador2 = Dibujar_Tablero.jugador2;
+//
+//        
+//        Colocacion colocacion = new Colocacion();
+//        do{
+//            System.out.println("Turno de " + jugador1.getNombre());
+//            colocacion.colocacion(jugador1.getBarcos(), jugador1.getTablero(), jugador1);
+//        }while(jugador1.getContturno() > 22);
+//        
+//        do{
+//            System.out.println("Turno de " + jugador2.getNombre());
+//            colocacion.colocacion(jugador2.getBarcos(), jugador2.getTablero(), jugador2);
+//        }while(jugador2.getContturno() > 22);
+//        
+//        //hundir
         hundir();
         
     }
