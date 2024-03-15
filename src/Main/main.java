@@ -4,9 +4,10 @@
  */
 package Main;
 
+import Code.Colocacion;
+import Code.Jugador;
 import View.Dibujar_Tablero;
-import static View.Dibujar_Tablero.pedirNombre;
-import java.util.Arrays;
+
 
 /**
  *
@@ -15,8 +16,22 @@ import java.util.Arrays;
 public class main {
     
     public static void main(String[] args) {
-        char[][] tableronuevo1 = Dibujar_Tablero.Tablero();
-        
+        Dibujar_Tablero.pedirNombre(); // Pedir nombres de jugadores
+
+        Jugador jugador1 = Dibujar_Tablero.jugador1;
+        Jugador jugador2 = Dibujar_Tablero.jugador2;
+
+        Colocacion colocacion = new Colocacion();
+        do{
+            System.out.println("Turno de " + jugador1.getNombre());
+            colocacion.colocacion(jugador1.getBarcos(), jugador1.getTablero(),jugador1);
+        }while(colocacion.getCont() > 0);
+        do{
+            System.out.println("Turno de " + jugador2.getNombre());
+            colocacion.colocacion(jugador2.getBarcos(), jugador2.getTablero(),jugador2);
+        }while(colocacion.getCont() > 0);
+
+        //hundir
     }
     
 }
