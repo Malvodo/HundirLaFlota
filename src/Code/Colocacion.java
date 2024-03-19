@@ -12,22 +12,23 @@ import View.MenuColocarBarco;
  */
 public class Colocacion {
 
-    private int cont;
-    
+    private int cont = 9;
 
     public void colocacion(Barco[] b, char[][] tabl, Jugador jugador) {
-        try {
             do {
-                int t = comprobarT(MenuColocarBarco.elegirbarco(), b, jugador);
-                b[t].setCentro(MenuColocarBarco.menuColocar());
-                b[t].Rotation(MenuColocarBarco.girarbarco(), tabl);
-                jugador.mostrarTablero(); // Mostrar el tablero actualizado
-                cont--;
-            } while (!MenuColocarBarco.confirmacion());
-        } catch (Exception ex) {
-            ex.getMessage();
-            colocacion(b, tabl, jugador);
-        }
+                for(int i = 0;i < jugador.barcos.length;i++){  //for creado para sustituir la variable t ya que sigue un orden concreto de colocacion de barcos
+                    try {
+                        MenuColocarBarco.elegirBarco(i);  //modificacion hecha este metodo esta en menuColocar
+                        b[i].setCentro(MenuColocarBarco.menuColocar());
+                        b[i].Rotation(MenuColocarBarco.girarbarco(), tabl);
+                        jugador.mostrarTablero(); // Mostrar el tablero actualizado
+                        cont--;
+                    }catch (Exception ex) {
+                      System.out.println(ex.getMessage());
+                      i--;
+                    }
+                }
+            } while (cont > 0);
     }
 
     public void colocabarco(Barco[] b, char[][] tabl, Jugador jugador) {
@@ -36,35 +37,6 @@ public class Colocacion {
         while (cont > 0) {
             colocacion(b, tabl, jugador);
         }
-    }
-
-    public int comprobarT(char bt, Barco[] barcos, Jugador j) throws Exception {
-        for (int i = 0; i < barcos.length; i++) {
-            if (bt == barcos[i].getDenom().charAt(0)) {
-                switch (barcos[i].getDenom().charAt(0)) {
-                    case 'p':
-                        if(j.getContPortaviones() > 0)
-                        j.setContPortaviones(j.getContPortaviones() - 1);
-                        return i;
-                    case 'b':
-                        if(j.getContBuque()> 0)
-                        j.setContBuque(j.getContBuque()- 1);
-                        return i;
-                    case 's':
-                        if(j.getContSubmarino()> 0)
-                        j.setContSubmarino(j.getContSubmarino()- 1);
-                        return i;
-                    case 'l':
-                        if(j.getContLancha()> 0)
-                        j.setContLancha(j.getContLancha()- 1);
-                        return i;
-                    default:
-                        throw new Exception("no existe este tipo de barco");
-                }
-                
-            }
-        }
-        throw new Exception("has puesto maxima cantidad de ese tipo de barcos");
     }
 
     public int getCont() {

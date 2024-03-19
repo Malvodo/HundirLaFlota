@@ -7,7 +7,6 @@ package Code;
 import Code.Jugador;
 import static View.Dibujar_Tablero.jugador1;
 import static View.Dibujar_Tablero.jugador2;
-import View.MenuColocarBarco;
 import java.util.Scanner;
 
 /**
@@ -44,10 +43,10 @@ public class Hundir {
     public static void ataque(char[][] tableroJugador, char[][] TableroResolver, Jugador jugador){
         Scanner sc = new Scanner(System.in);
         System.out.println("CASILLA A HUNDIR?");
-        System.out.println("Elija la Columna de la casilla");
+        System.out.println("Elija la Columna de la casilla (0 - 9)");
         int columna = sc.nextInt();
         
-        System.out.println("Elija la fila de la casilla");
+        System.out.println("Elija la fila de la casilla (0 - 9)");
         int fila = sc.nextInt();
         
         if(tableroJugador[columna][fila] == '~'){

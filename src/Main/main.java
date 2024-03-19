@@ -14,6 +14,7 @@ import View.Dibujar_Tablero;
  * @author barrodgu
  */
 public class main {
+    
 
     public static void main(String[] args) {
         Dibujar_Tablero.pedirNombre(); // Pedir nombres de jugadores
