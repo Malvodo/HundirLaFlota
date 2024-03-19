@@ -40,16 +40,19 @@ public class Barco implements Comparable<Barco> {
     }
 
     private void comprotacion(boolean isHorizontal, char[][] tablero) throws Exception {
+        if (tablero[centro[0][1]][centro[0][0]] != '~'){
+            throw new Exception("Este barco esta puesto sobre otro barco intenta colocarlo de nuevo");
+        }
         if (isHorizontal == false) {
             for (int i = 0; i < longitud / 2 + 1; i++) {
                 if (tablero[centro[0][1] + i][centro[0][0]] != '~' || tablero[centro[0][1] - i][centro[0][0]] != '~') {
-                    throw new Exception("Este barco esta puesto sobre otro barco");
+                    throw new Exception("Este barco esta puesto sobre otro barco intenta colocarlo de nuevo");
                 }
             }
         } else if(isHorizontal == true){
             for (int i = 1; i < longitud / 2 + 1; i++) {
                 if (tablero[centro[0][1]][centro[0][0] + i] != '~' || tablero[centro[0][1]][centro[0][0] - i] != '~') {
-                    throw new Exception("Este barco esta puesto sobre otro barco");
+                    throw new Exception("Este barco esta puesto sobre otro barco intenta colocarlo de nuevo");
                 }
             }
         }

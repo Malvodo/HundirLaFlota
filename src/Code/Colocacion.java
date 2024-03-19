@@ -23,9 +23,12 @@ public class Colocacion {
                         b[i].Rotation(MenuColocarBarco.girarbarco(), tabl);
                         jugador.mostrarTablero(); // Mostrar el tablero actualizado
                         cont--;
-                    }catch (Exception ex) {
-                      System.out.println(ex.getMessage());
+                    }catch (IndexOutOfBoundsException ex) {
+                      System.out.println("El barco esta coloado fuera de campo intenta colocarlo de nuevo");
                       i--;
+                    }catch (Exception ex2) {
+                        System.out.println(ex2.getMessage());
+                        i--;
                     }
                 }
             } while (cont > 0);
