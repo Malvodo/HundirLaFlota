@@ -15,7 +15,6 @@ public class Colocacion {
     private int cont = 9;
 
     public void colocacion(Barco[] b, char[][] tabl, Jugador jugador) {
-       
             do {
                 for(int i = 0;i < jugador.barcos.length;i++){  //for creado para sustituir la variable t ya que sigue un orden concreto de colocacion de barcos
                     try {
@@ -25,12 +24,11 @@ public class Colocacion {
                         jugador.mostrarTablero(); // Mostrar el tablero actualizado
                         cont--;
                     }catch (Exception ex) {
-                      ex.getMessage();
+                      System.out.println(ex.getMessage());
                       i--;
                     }
                 }
             } while (cont > 0);
-        
     }
 
     public void colocabarco(Barco[] b, char[][] tabl, Jugador jugador) {
