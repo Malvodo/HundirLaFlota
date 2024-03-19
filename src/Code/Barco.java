@@ -24,13 +24,14 @@ public class Barco implements Comparable<Barco> {
 
     public void Rotation(boolean isHorizontal, char[][] tablero) throws Exception {
         comprotacion(isHorizontal, tablero);
-        if (isHorizontal) {
+        if (isHorizontal == false) {
             tablero[centro[0][0]][centro[0][0]] = secciones;
             for (int i = 1; i < longitud / 2 + 1; i++) {
                 tablero[centro[0][0] + i][centro[0][0]] = secciones;
                 tablero[centro[0][0] - i][centro[0][0]] = secciones;
             }
-        } else {
+        } else if(isHorizontal == true){
+            tablero[centro[0][0]][centro[0][0]] = secciones;
             for (int i = 1; i < longitud / 2 + 1; i++) {
                 tablero[centro[0][0]][centro[0][0] + i] = secciones;
                 tablero[centro[0][0]][centro[0][0] - i] = secciones;
