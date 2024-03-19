@@ -39,8 +39,8 @@ public class MenuColocarBarco {
         int columna = sc.nextInt();
         
         System.out.println("Elija la fila de la casilla (0 - 9)");
-        int fila = sc.next().charAt(0);
-        int[][] ct = new int[][]{{columna},{fila}};
+        int fila = sc.nextInt();
+        int[][] ct = new int[][]{{columna, fila}};
         return ct;
     }
     
