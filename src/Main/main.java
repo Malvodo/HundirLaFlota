@@ -23,6 +23,7 @@ public class main {
         Jugador jugador2 = Dibujar_Tablero.jugador2;
 
         Colocacion colocacion = new Colocacion();
+        
         System.out.println("Turno de " + jugador1.getNombre());
         colocacion.colocabarco(jugador1.getBarcos(), jugador1.getTablero(), jugador1);
 
