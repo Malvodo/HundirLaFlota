@@ -30,7 +30,7 @@ public class Barco implements Comparable<Barco> {
                 tablero[centro[0][0] + i][centro[0][0]] = secciones;
                 tablero[centro[0][0] - i][centro[0][0]] = secciones;
             }
-        } else if(isHorizontal == true){
+        } else if (isHorizontal == true) {
             tablero[centro[0][0]][centro[0][0]] = secciones;
             for (int i = 1; i < longitud / 2 + 1; i++) {
                 tablero[centro[0][0]][centro[0][0] + i] = secciones;
@@ -43,13 +43,13 @@ public class Barco implements Comparable<Barco> {
         if (isHorizontal == false) {
             for (int i = 1; i < longitud / 2 + 1; i++) {
                 if (tablero[centro[0][0] + i][centro[0][0]] != '~' || tablero[centro[0][0] - i][centro[0][0]] != '~') {
-                    throw new Exception("El barco sale del tablero intenta colocarlo en diferente sitio");
+                    throw new Exception("Este barco esta puesto sobre otro barco");
                 }
             }
-        } else if(isHorizontal == true){
+        } else if (isHorizontal == true) {
             for (int i = 1; i < longitud / 2 + 1; i++) {
                 if (tablero[centro[0][0]][centro[0][0] + i] != '~' || tablero[centro[0][0]][centro[0][0] - i] != '~') {
-                    throw new Exception("El barco sale del tablero intenta colocarlo en diferente sitio");
+                    throw new Exception("Este barco esta puesto sobre otro barco");
                 }
             }
         }
